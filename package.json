@@ -1,0 +1,22 @@
+{
+  "name": "react-web-parents",
+  "version": "1.0.0",
+  "description": "React Web App for Parents",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckSchool/react-web-parents.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ckSchool/react-web-parents/issues"
+  },
+  "homepage": "https://github.com/ckSchool/react-web-parents#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
