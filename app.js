@@ -8,6 +8,10 @@ var express = require("express"),
     LocalStrategy = require("passport-local"),
     methodOverride = require("method-override"),
     User = require("./models/user");
+app.get("/andrew", function(req, res){
+    res.send("Hi there Andrew");
+});
+
 var listener = app.listen(process.env.PORT, process.env.IP, function(){
     var address = listener.address().address;
     var port = listener.address().port;
