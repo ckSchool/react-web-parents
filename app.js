@@ -1,0 +1,10 @@
+var express = require("express"),
+    app = express(),
+    time = new Date().toLocaleTimeString(),
+    bodyParser = require('body-parser'),
+    mongoose = require("mongoose"),
+    flash = require("connect-flash"),
+    passport = require("passport"),
+    LocalStrategy = require("passport-local"),
+    methodOverride = require("method-override"),
+    User = require("./models/user");
