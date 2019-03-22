@@ -8,6 +8,12 @@ var express = require("express"),
     LocalStrategy = require("passport-local"),
     methodOverride = require("method-override"),
     User = require("./models/user");
+var authRoutes = require("./routes/auth");
+var indexRoutes = require("./routes/index");
+
+app.use("/", authRoutes);
+app.use("/", indexRoutes);
+
 app.get("/andrew", function(req, res){
     res.send("Hi there Andrew");
 });
