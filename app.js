@@ -11,6 +11,7 @@ var express = require("express"),
 var authRoutes = require("./routes/auth");
 var indexRoutes = require("./routes/index");
 
+app.use(express.static(__dirname + '/public'));
 app.use("/", authRoutes);
 app.use("/", indexRoutes);
 
