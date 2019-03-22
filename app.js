@@ -20,7 +20,7 @@ var databaseurl = process.env.DATABASEURL;
 mongoose.connect(databaseurl, { useNewUrlParser: true });
 
 // // Stops deprecation warning about collection.findAndModify
-// mongoose.set('useFindAndModify', false);
+mongoose.set('useFindAndModify', false);
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + '/public'));
