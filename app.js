@@ -8,12 +8,22 @@ var express = require("express"),
     LocalStrategy = require("passport-local"),
     methodOverride = require("method-override"),
     User = require("./models/user");
+
+// //requiring routes
 var authRoutes = require("./routes/auth");
 var indexRoutes = require("./routes/index");
+
+// Secret data outside source control, see .env file.
+require('dotenv').config();
+var password = process.env.PASSWORD;
+var databaseurl = process.env.DATABASEURL;
+mongoose.connect(databaseurl, { useNewUrlParser: true });
 
 app.use(express.static(__dirname + '/public'));
 app.use("/", authRoutes);
 app.use("/", indexRoutes);
+
+// Use Environmental variables to determine PORT and IP to liston on...
 
 app.get("/andrew", function(req, res){
     res.send("Hi there Andrew");
