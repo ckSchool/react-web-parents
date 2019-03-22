@@ -62,3 +62,5 @@ typings/
 
 nohup.out
 .env.swp
+sample.env
+*.env
