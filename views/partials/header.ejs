@@ -11,30 +11,30 @@
     <link rel="stylesheet" href="css/master.css">
 
   </head>
-  <body class="d-flex flex-column">
-    <header>
-        <!-- A grey horizontal navbar that becomes vertical on small screens -->
-        <nav class="navbar navbar-expand bg-light align-items-center">
-            <div class="navbar-nav btn-group rounded" role="group" aria-label="Basic example">
-                <a class="nav-item btn btn-primary" href="login">Login</a>
-                <a class="nav-item btn btn-success mx-1" href="register">Register</a>
-                <a class="nav-item btn btn-warning" href="logout">Logout</a>
-            </div>
-            <% if(!currentUser){ %>  
-                <span href="#" class="nav-link" style="color:crimson"><i class="fas fa-user"></i></span>
-            <% } else { %>
-                <span href="#" class="nav-link" style="color:chartreuse"><i class="fas fa-user"></i></span>
-            <% } %>
-      </nav>
+    <body class="d-flex flex-column">
+        <header>
+            <!-- A grey horizontal navbar that becomes vertical on small screens -->
+            <!-- <nav class="navbar navbar-expand bg-light align-items-center">
+                <div class="navbar-nav btn-group rounded" role="group" aria-label="Basic example">
+                    <a class="nav-item btn btn-primary" href="login">Login</a>
+                    <a class="nav-item btn btn-success mx-1" href="register">Register</a>
+                    <a class="nav-item btn btn-warning" href="logout">Logout</a>
+                </div>
+                <% if(!currentUser){ %>  
+                    <span href="#" class="nav-link" style="color:crimson"><i class="fas fa-user"></i></span>
+                <% } else { %>
+                    <span href="#" class="nav-link" style="color:chartreuse"><i class="fas fa-user"></i></span>
+                <% } %>
+            </nav> -->
 
-      <div class="container">
-            <% if(error && error.length > 0){ %>
-              <div class="alert alert-danger my-2" role="alert"><%= error %></div>
-            <% } %>
-            <% if(success && success.length > 0){ %>
-              <div class="alert alert-success my-2" role="alert"><%= success %></div>
-            <% } %>
-          </div>
-    </header>
+            <div class="container">
+                <% if(error && error.length > 0){ %>
+                <div class="alert alert-danger my-2" role="alert"><%= error %></div>
+                <% } %>
+                <% if(success && success.length > 0){ %>
+                <div class="alert alert-success my-2" role="alert"><%= success %></div>
+                <% } %>
+            </div>
+        </header>
 
     <main class="container">
