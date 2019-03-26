@@ -4,8 +4,8 @@ var passport = require("passport");
 var User = require("../models/user");
 var middleware = require("../middleware");
 var students = require("../models/students");
-var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-date = new Date().toLocaleString('en-GB', options);
+let dateandtime = require('./date-and-time');
+date = dateandtime.format(new Date(), 'dddd, DD MMMM YYYY')
 
 router.get('/', function(req, res){
     res.render('index');
