@@ -3,6 +3,8 @@ var express = require("express"),
     time = new Date().toLocaleTimeString(),
     bodyParser = require('body-parser'),
     mongoose = require("mongoose"),
+    expressSession = require('express-session'),
+    MongoStore = require('connect-mongo')(expressSession),
     flash = require("connect-flash"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
@@ -17,8 +19,9 @@ var indexRoutes = require("./routes/index");
 require('dotenv').config();
 var password = process.env.PASSWORD;
 var databaseurl = process.env.DATABASEURL;
-mongoose.connect(databaseurl, { useNewUrlParser: true });
-
+mongoose.connect(databaseurl, { useNewUrlParser: true }, 
+    function (err) { if (err) console.log(err); });
+    
 // Stops deprecation warning about collection.findAndModify
 mongoose.set('useFindAndModify', false);
 
@@ -32,6 +35,7 @@ app.set('view engine', 'ejs');
 app.use(require("express-session")({
     secret: password,
     resave: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection }), // Maintains session on refresh
     saveUninitialized: false
   }));
 app.use(passport.initialize());
