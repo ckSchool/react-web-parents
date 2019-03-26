@@ -33,7 +33,7 @@ app.set('view engine', 'ejs');
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
-    secret: password,
+    secret: password || 'temporary password please change in .env file.',
     resave: false,
     store: new MongoStore({ mongooseConnection: mongoose.connection }), // Maintains session on refresh
     saveUninitialized: false
