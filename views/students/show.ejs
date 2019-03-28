@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+<section class="container flex flex-row">
+
+  <article class="flex-article thumbnail">
+    <div class="card show">
+        <div class="card-body">
+            <h4 class="card-title float-right">ID : <%= student._id %></h4>
+            <h4 class="card-title"><%= student.name %></h4>
+            <img src="<%= student.picture %>" alt="">
+            <p class="card-text"><%= student.bio %></p>
+            <p class="card-text"><%= student.address %></p>
+            <% if(!student.atSchool){ %>  
+                <span class="align-middle" href="#" class="nav-link" style="color:crimson"><i class="fas fa-3x fa-user-slash fa-fw"></i></span>
+            <% } else { %>
+                <span class="align-middle" href="#" class="nav-link" style="color:darkgreen"><i class="fas fa-3x fa-user fa-fw"></i></span>
+            <% } %>
+            <p class="card-text"><em>Email : </em><%= student.email %></p>
+
+        </div>
+    </div>
+  </article>
+
+</section>
+
+<% include ../partials/footer %>
