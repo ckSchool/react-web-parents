@@ -10,10 +10,12 @@ var express = require("express"),
     LocalStrategy = require("passport-local"),
     methodOverride = require("method-override"),
     User = require("./models/user");
+    var seedDB = require("./seeds");
 
-// //requiring routes
-var authRoutes = require("./routes/auth");
-var indexRoutes = require("./routes/index");
+// requiring routes
+var  authRoutes = require("./routes/auth"),
+     indexRoutes = require("./routes/index"),
+     studentRoutes = require("./routes/students");
 
 // Secret data outside source control, see .env file.
 require('dotenv').config();
@@ -30,6 +32,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(methodOverride("_method"));
 app.use(flash());
 app.set('view engine', 'ejs');
+seedDB();
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
@@ -53,6 +56,7 @@ app.use(function(req, res, next){
 
 app.use("/", authRoutes);
 app.use("/", indexRoutes);
+app.use("/students", studentRoutes);
 
 // Use Environmental variables to determine PORT and IP to liston on...
 
