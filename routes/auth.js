@@ -27,7 +27,7 @@ router.post('/register', function(req, res){
         }
         passport.authenticate("local")(req, res, function(){
           req.flash("success", "Welcome to Chandra Kumala School " + user.username);
-          res.redirect("/home");
+          res.redirect("/students/");
         });
     });
   });
@@ -39,7 +39,7 @@ router.post('/register', function(req, res){
   
    // Login
    router.post('/login', passport.authenticate("local", { 
-       successRedirect: "/home", 
+       successRedirect: "/students", 
        successFlash: 'Welcome!',
        failureRedirect: "/login",
        failureFlash: 'Invalid username or password.' 
