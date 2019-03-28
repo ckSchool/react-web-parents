@@ -13,19 +13,29 @@
   </head>
     <body class="d-flex flex-column">
         <header>
-            <!-- A grey horizontal navbar that becomes vertical on small screens -->
-            <!-- <nav class="navbar navbar-expand bg-light align-items-center">
-                <div class="navbar-nav btn-group rounded" role="group" aria-label="Basic example">
-                    <a class="nav-item btn btn-primary" href="login">Login</a>
-                    <a class="nav-item btn btn-success mx-1" href="register">Register</a>
-                    <a class="nav-item btn btn-warning" href="logout">Logout</a>
+            <nav class="navbar navbar-expand bg-light ml-auto">
+                <div class="navbar-nav btn-group rounded w-100" role="group" aria-label="Basic example">
+                    <div class="mr-auto">
+                        <a class="nav-item btn btn-success mx-1" href="/"><i class="fas fa-home"></i></a>
+                        <% if(currentUser){ %>  
+                        <a class="nav-item btn btn-success mx-1" href="/students"><i class="fas fa-th-list"></i> Students</a>
+                        <% } %>
+                    </div>
+                    <div>
+                        <% if(!currentUser){ %>  
+                        <a class="nav-item btn btn-primary" href="/login"><i class="fas fa-sign-in-alt"></i></a>
+                        <% } else { %>  
+                        <a class="nav-item btn btn-success mx-1" href="/register"><i class="fas fa-user-plus"></i></a>
+                        <a class="nav-item btn btn-warning" href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+                        <% } %>
+                    </div>
                 </div>
                 <% if(!currentUser){ %>  
-                    <span href="#" class="nav-link" style="color:crimson"><i class="fas fa-user"></i></span>
+                    <span href="#" class="nav-link ml-4 bg-dark" style="color:crimson"><i class="fas fa-user"></i></span>
                 <% } else { %>
-                    <span href="#" class="nav-link" style="color:chartreuse"><i class="fas fa-user"></i></span>
+                    <span href="#" class="nav-link ml-4 bg-dark" style="color:chartreuse"><i class="fas fa-user"></i></span>
                 <% } %>
-            </nav> -->
+            </nav>
 
             <div class="container">
                 <% if(error && error.length > 0){ %>
