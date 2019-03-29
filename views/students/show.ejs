@@ -7,15 +7,31 @@
         <div class="card-body">
             <h4 class="card-title float-right">ID : <%= student._id %></h4>
             <h4 class="card-title"><%= student.name %></h4>
-            <img src="<%= student.picture %>" alt="">
-            <p class="card-text"><%= student.bio %></p>
-            <p class="card-text"><%= student.address %></p>
-            <% if(!student.atSchool){ %>  
-                <span class="align-middle" href="#" class="nav-link" style="color:crimson"><i class="fas fa-3x fa-user-slash fa-fw"></i></span>
-            <% } else { %>
-                <span class="align-middle" href="#" class="nav-link" style="color:darkgreen"><i class="fas fa-3x fa-user fa-fw"></i></span>
-            <% } %>
-            <p class="card-text"><em>Email : </em><%= student.email %></p>
+            <div class="row">
+                <div class="col">
+                    <img src="<%= student.picture %>" alt="">
+                </div>
+                <div class="col  m-auto text-center">
+                        <h1 class="namecard"><%= student.class %></h1>
+                </div>
+                <div class="col m-auto text-center">
+                        <% if(!student.atSchool){ %>  
+                            <span class="align-middle" href="#" class="nav-link" style="color:crimson"><i class="fas fa-3x fa-user-slash fa-fw"></i></span>
+                        <% } else { %>
+                            <span class="align-middle" href="#" class="nav-link" style="color:darkgreen"><i class="fas fa-3x fa-user fa-fw"></i></span>
+                        <% } %>
+                </div>
+            </div>
+            <dl class="row">
+                <dt class="col-sm-3">Details : </dt>
+                <dd class="col-sm-9"><%= student.bio %></dd>
+                <dt class="col-sm-3">Email : </dt>
+                <dd class="col-sm-9">
+                    <a href = "mailto:<%= student.email %>"><%= student.email %></a>
+                </dd>
+                <dt class="col-sm-3">Address : </dt>
+                <dd class="col-sm-9"><p><%= student.address %></p></dd>
+            </dl>
 
         </div>
     </div>
