@@ -64,3 +64,4 @@ nohup.out
 .env.swp
 sample.env
 *.env
+.vscode/settings.json
