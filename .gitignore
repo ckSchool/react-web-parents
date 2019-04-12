@@ -65,3 +65,4 @@ nohup.out
 sample.env
 *.env
 .vscode/*
+library/mysqlconnector.js
